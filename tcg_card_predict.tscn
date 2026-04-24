@@ -1,0 +1,188 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3psx8wqkawj1"]
+
+[ext_resource type="Script" uid="uid://do66xi48m2bly" path="res://tcg_card_predict.gd" id="1_vwnet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwnet"]
+
+[node name="TcgCardPredict" type="Control" node_paths=PackedStringArray("monster_percentage_number_label", "magic_percentage_number_label", "monster_spin_box", "magic_spin_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vwnet")
+monster_percentage_number_label = NodePath("PanelContainer/MarginContainer/MainBox/PercentagesDisplay/MonsterPercentageNumberLabel")
+magic_percentage_number_label = NodePath("PanelContainer/MarginContainer/MainBox/PercentagesDisplay/MagicPercentageNumberLabel")
+monster_spin_box = NodePath("PanelContainer/MarginContainer/MainBox/InputFields/MonsterSpinBox")
+magic_spin_box = NodePath("PanelContainer/MarginContainer/MainBox/InputFields/MagicSpinBox")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="MainBox" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="InputFields" type="GridContainer" parent="PanelContainer/MarginContainer/MainBox"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+
+[node name="Padding1" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="MonsterLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Monstruo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Padding2" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="MagicLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Magia/Trampa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Padding3" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="Padding4" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="MonsterSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 40.0
+rounded = true
+alignment = 1
+
+[node name="Padding5" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="MagicSpinBox" type="SpinBox" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 40.0
+rounded = true
+alignment = 1
+
+[node name="Padding6" type="Panel" parent="PanelContainer/MarginContainer/MainBox/InputFields"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="PercentagesDisplay" type="GridContainer" parent="PanelContainer/MarginContainer/MainBox"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="MonsterPercentageLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/PercentagesDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Probabilidad de robar monstruos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonsterPercentageNumberLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/PercentagesDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPercentageLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/PercentagesDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Probabilidad de robar magia/trampa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPercentageNumberLabel" type="Label" parent="PanelContainer/MarginContainer/MainBox/PercentagesDisplay"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="GridContainer" parent="PanelContainer/MarginContainer/MainBox"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+
+[node name="Padding1" type="Panel" parent="PanelContainer/MarginContainer/MainBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="DrawMonsterButton" type="Button" parent="PanelContainer/MarginContainer/MainBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Robar Monstruo"
+icon_alignment = 1
+
+[node name="Padding2" type="Panel" parent="PanelContainer/MarginContainer/MainBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[node name="DrawMagicButton" type="Button" parent="PanelContainer/MarginContainer/MainBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Robar Magia/Trampa"
+icon_alignment = 1
+
+[node name="Padding3" type="Panel" parent="PanelContainer/MarginContainer/MainBox/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vwnet")
+
+[connection signal="value_changed" from="PanelContainer/MarginContainer/MainBox/InputFields/MonsterSpinBox" to="." method="_on_monster_spin_box_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/MainBox/InputFields/MagicSpinBox" to="." method="_on_magic_spin_box_value_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/MainBox/Buttons/DrawMonsterButton" to="." method="_on_draw_monster_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/MainBox/Buttons/DrawMagicButton" to="." method="_on_draw_magic_button_pressed"]
