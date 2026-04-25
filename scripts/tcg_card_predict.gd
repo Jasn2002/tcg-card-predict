@@ -4,6 +4,8 @@ class_name TCGCardPredict
 @export var monster_card_amount : int = 0
 @export var magic_card_amount : int = 0
 
+@export var monster_percentage_number_progress_bar : TextureProgressBar
+@export var magic_percentage_number_progress_bar : TextureProgressBar
 @export var monster_percentage_number_label : Label
 @export var magic_percentage_number_label : Label
 @export var monster_spin_box : SpinBox
@@ -24,8 +26,11 @@ func calculate_probabilities(monster_cards : int, magic_cards : int) -> Array:
 
 func _on_calculate_button_pressed():
 	var probabilities : Array = calculate_probabilities(monster_card_amount, magic_card_amount)
-	monster_percentage_number_label.text = "%s" % [probabilities[0]]
-	magic_percentage_number_label.text = "%s" % probabilities[1]
+	monster_percentage_number_progress_bar.value = probabilities[0]
+	magic_percentage_number_progress_bar.value = probabilities[1]
+	
+	monster_percentage_number_label.text = "%s" % probabilities[0] + ' %'
+	magic_percentage_number_label.text = "%s" % probabilities[1] + ' %'
 	
 
 

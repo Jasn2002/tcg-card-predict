@@ -15,6 +15,11 @@ run/main_scene="uid://c3psx8wqkawj1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/always_on_top=true
+window/size/maximize_disabled=true
+
 [dotnet]
 
 project/assembly_name="TCGCardPredict"
